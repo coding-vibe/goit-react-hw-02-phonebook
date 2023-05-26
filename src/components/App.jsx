@@ -29,7 +29,7 @@ class App extends Component {
 
     const alertMessage = `${name} is already in contacts.`
 
-    duplicates.includes(true) ? alert(alertMessage) : this.setState(prevState => ({
+    duplicates ? alert(alertMessage) : this.setState(prevState => ({
       contacts: [newContact, ...prevState.contacts]
     }));
   };
