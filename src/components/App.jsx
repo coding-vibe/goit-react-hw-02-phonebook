@@ -19,7 +19,7 @@ class App extends Component {
   formSubmitHandler = (name, number) => {
     const { contacts } = this.state;
 
-    const duplicates = contacts.map(contact => contact.name === name || contact.number === number);
+    const duplicates = contacts.find(contact => contact.name === name || contact.number === number);
 
     const newContact = {
       id: nanoid(),
