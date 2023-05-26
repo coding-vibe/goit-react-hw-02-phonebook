@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
@@ -29,7 +30,7 @@ class App extends Component {
 
     const alertMessage = `${name} is already in contacts.`
 
-    duplicates ? alert(alertMessage) : this.setState(prevState => ({
+    duplicates ? Notify.failure(alertMessage) : this.setState(prevState => ({
       contacts: [newContact, ...prevState.contacts]
     }));
   };
